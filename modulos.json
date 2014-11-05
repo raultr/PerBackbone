@@ -1,17 +1,20 @@
 {
-  "CATALOGO": {
-    "Clave": "1",
-    "Nombre": "Catalogos",
-    "Imagen":"/img/songs/girl.jpg"
-  },
-    "PERSONAL": {
-    "Clave": "2",
-    "Nombre": "Personal",
-    "Imagen":"/img/songs/girl.jpg"
-  },
-    "SERVICIOS": {
-    "Clave": "3",
-    "Nombre": "Servicios",
-    "Imagen":"/img/songs/girl.jpg"
-  }
+    "CATALOGO": {
+      "clave": "1",
+      "nombre": "Catalogos",
+      "imagen":"/img/songs/girl.jpg",
+      "orden": "3"
+    },
+      "PERSONAL": {
+      "clave": "2",
+      "nombre": "Personal",
+      "imagen":"/img/songs/girl.jpg",
+      "orden": "2"
+    },
+      "SERVICIOS": {
+      "clave": "3",
+      "nombre": "Servicios",
+      "imagen":"/img/songs/girl.jpg",
+      "orden":1
+    }
 }
