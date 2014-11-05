@@ -19,16 +19,16 @@ initialize: function () {
 
    fetchData: function () {
     var self = this;
-	debugger;
     // Load Data
     return $.getJSON('modulos.json').then(function (data) {
+    	console.log(data.CATALOGO)
       self.jsonData = data;
-      debugger;
-      for (var name in data) {
-        if (data.hasOwnProperty(name)) {
-          self.addAlbum(name, data[name]);
-        }
-      }
+    
+      // for (var name in data) {
+      // 	if (data.hasOwnProperty(name)) {
+      //     self.addAlbum(name, data[name]);
+      //   }
+      // }
 
     });
   },
