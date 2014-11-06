@@ -9,12 +9,12 @@
       "clave": "2",
       "nombre": "Personal",
       "imagen":"/img/songs/girl.jpg",
-      "orden": "2"
+      "orden": "1"
     },
-      "SERVICIOS": {
+      "HERRAMIENTAS": {
       "clave": "3",
-      "nombre": "Servicios",
+      "nombre": "Herramientas",
       "imagen":"/img/songs/girl.jpg",
-      "orden":1
+      "orden":"2"
     }
 }

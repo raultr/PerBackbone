@@ -1,20 +1,24 @@
 Personal.Router = Backbone.Router.extend({
   routes: {
     "": "index",
-    "catalogo": "catalogos"
+    "Catalogos": "Catalogos",
+    "Personal": "personal",
+    "Herramientas": "herramientas",
+    
+    "modulo/:nombre": "modulo_det"
   },
 
 initialize: function () {
     this.current = {};
     this.jsonData = {};
-    this.catalogos = new Personal.Collections.Catalogos();
-    this.catalogoslist = new Personal.Views.Catalogos({ collection: this.catalogos });
-     // this.catalogoslist.
+    this.Modulos = new Personal.Collections.Modulos();
+    this.ModulosVista = new Personal.Views.Modulos({ collection: this.Modulos });
     Backbone.history.start();
   },
 
   index: function () {
     this.fetchData();
+    
     console.log("Estas en el indice");
   },
 
@@ -25,23 +29,35 @@ initialize: function () {
           $.each(data, function(i,cat){
               console.log(i);
               console.log(cat);
-              self.addCatalogo(cat);
+              self.addModulo(cat);
           });
         });
   },
 
-  catalogos: function () {
-    console.log("Estas en la lista de catalogos");
+  Catalogos: function () {
+    console.log("Estas en la lista de Catalogos");
   },
 
-  addCatalogo: function (cat) {
-      this.catalogos.add(new Personal.Models.Catalogo({
+  personal: function () {
+    console.log("Estas en la lista de personal");
+  },
+
+  herramientas: function () {
+    console.log("Estas en la lista de herramientas");
+  },
+
+
+  modulo_det: function () {
+    console.log("Estas en el detalle del modulo");
+  },
+
+  addModulo: function (cat) {
+      this.Modulos.add(new Personal.Models.modulo({
         clave:cat.clave,
         nombre:cat.nombre,
         imagen:cat.imagen,
         orden:cat.orden
-
       }));
-      console.log(this.catalogos.length);
+      console.log(this.Modulos.length);
      }
 });
