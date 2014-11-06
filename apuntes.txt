@@ -1,0 +1,5 @@
+Iniciar el servidor:
+	python -m SimpleHTTPServer 7070
+
+Tutorial de backbone
+https://fcfe59e9efe9b0ff550b02e9b0ae8553e3453d58.googledrive.com/host/0Bzky3aU2486jMmN1Tmx6Z3U4VkU/
