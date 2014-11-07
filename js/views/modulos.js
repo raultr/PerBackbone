@@ -4,8 +4,18 @@ Personal.Views.Modulos = Backbone.View.extend({
   template: Handlebars.compile($("#modulos-template").html()),
 
   initialize: function () {
-   // this.listenTo(this.collection, "add", this.addOne, this);
-    //this.listenTo(this.collection,"sort", this.render, this);
+    this.Escuchar();
+  },
+
+  Escuchar: function(){
+    this.listenTo(this.collection, "add", this.addOne, this);
+    this.listenTo(this.collection,"sort", this.render, this);
+  },
+
+
+  noEscuchar: function(){
+     this.stopListening(this.collection);
+
   },
 
   render: function () {

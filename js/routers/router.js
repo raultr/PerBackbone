@@ -18,21 +18,33 @@ initialize: function () {
 
   index: function () {
     this.fetchData();
-    
     console.log("Estas en el indice");
   },
 
-  fetchData: function () {
-    var self = this;
-    // Load Data
-    return $.getJSON('modulos.json').then(function (data) {
-          $.each(data, function(i,cat){
-              console.log(i);
-              console.log(cat);
-              self.addModulo(cat);
-          });
-        });
-  },
+
+  fetchData:function(){
+      var self = this;
+      $.ajax({
+      dataType: 'json',
+      data: "",
+      url: '/modulos.json',
+      success: function(datos) {
+              self.llenarDatos(datos);
+                },
+
+       error: function() { alert("Error leyendo fichero jsonP"); }
+    });
+    },
+
+    llenarDatos: function(datos)
+    {
+       this.ModulosVista.noEscuchar();
+      for(var index in datos){
+         this.addModulo(datos[index]);
+      }     
+        this.ModulosVista.Escuchar();
+        this.Modulos.sort();
+    },
 
   Catalogos: function () {
     console.log("Estas en la lista de Catalogos");
