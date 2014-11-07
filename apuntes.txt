@@ -28,3 +28,9 @@ Modelo y Coleccion Catalogos
  
  
 Modelo y Coleccion CatalogoDet
+
+
+Catalogos:
+	Clave
+	Nombre
+	imagen
