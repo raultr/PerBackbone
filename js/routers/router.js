@@ -4,7 +4,6 @@ Personal.Router = Backbone.Router.extend({
     "Catalogos": "Catalogos",
     "Personal": "personal",
     "Herramientas": "herramientas",
-    
     "modulo/:nombre": "modulo_det"
   },
 
@@ -44,6 +43,8 @@ initialize: function () {
       }     
         this.ModulosVista.Escuchar();
         this.Modulos.sort();
+        this.Modulos.sort();
+          
     },
 
   Catalogos: function () {
