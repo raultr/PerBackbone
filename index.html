@@ -18,27 +18,26 @@
        
       </ul>
     </section>
-    <section id="catalogosDetalle">
-    <div class="Tabla">    
-      <div class="columna">Descripcion1</div>
-      <div class="columna">Descripcion2</div>
-      <div class="columna">Monto1</div>
-      <div class="columna">Monto2</div>
-      <button class="eliminar"></button>
-    </div>
-    <div class="nuevo">
-      <input  placeholder="Descripcion1" autofocus>
-      <input  placeholder="Descripcion1" >
-      <input  placeholder="Monto1" >
-      <input  placeholder="Monto2" >
-    </div>
-    <div class="detalle">    
-      <label>Primaria</label>
-      <label>Descripcion2</label>
-      <label>1.0</label>
-      <label>0.0</label>
-      <button class="eliminar"></button>
-    </div>
+    <section class="catalogosDetalle">
+      <div class="cabecera">    
+        <div class="columna">Descripcion1</div>
+        <div class="columna">Descripcion2</div>
+        <div class="columna">Monto1</div>
+        <div class="columna">Monto2</div>
+        <div class="columna"><button class="eliminar">X</button> </div> 
+      </div>
+     <div class="filas">
+         <div class="columna"><input class="editable" placeholder="Descripcion1.." autofocus readonly=true /></div>
+        <div class="columna"><input class="editable" placeholder="Descripcion1.." /> </div>
+        <div class="columna"><input class="editable" placeholder="Monto1.." readonly=true /> </div>
+        <div class="columna"><input class="editable" placeholder="Monto2.." /> </div> 
+      </div>
+       <div class="filas">
+         <div class="columna"><input  class="noeditable" placeholder="Descripcion1" autofocus readonly=true /></div>
+        <div class="columna"><input class="noeditable" placeholder="Descripcion1" readonly=true/> </div>
+        <div class="columna"><input class="noeditable" placeholder="Monto1"  readonly=true/> </div>
+        <div class="columna"><input class="noeditable" placeholder="Monto2" /> </div> 
+      </div>
     </section>
     
  <script id="modulos-template" type="text/x-handlebars-template">
@@ -50,6 +49,7 @@
     <a href="#Catalogos/{{clave}}">{{nombre}}</a>
   </script>
 
+  <link rel="stylesheet" href="css/estilos.css">
   <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
   <script type="text/javascript" src="lib/underscore.js"></script>
   <script type="text/javascript" src="lib/handlebars-v1.3.0.js"></script>
