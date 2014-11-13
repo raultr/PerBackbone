@@ -24,20 +24,9 @@
         <div class="columna">Descripcion2</div>
         <div class="columna">Monto1</div>
         <div class="columna">Monto2</div>
-        <div class="columna"><button class="eliminar">X</button> </div> 
       </div>
-     <div class="filas">
-         <div class="columna"><input class="editable" placeholder="Descripcion1.." autofocus readonly=true /></div>
-        <div class="columna"><input class="editable" placeholder="Descripcion1.." /> </div>
-        <div class="columna"><input class="editable" placeholder="Monto1.." readonly=true /> </div>
-        <div class="columna"><input class="editable" placeholder="Monto2.." /> </div> 
-      </div>
-       <div class="filas">
-         <div class="columna"><input  class="noeditable" placeholder="Descripcion1" autofocus readonly=true /></div>
-        <div class="columna"><input class="noeditable" placeholder="Descripcion1" readonly=true/> </div>
-        <div class="columna"><input class="noeditable" placeholder="Monto1"  readonly=true/> </div>
-        <div class="columna"><input class="noeditable" placeholder="Monto2" /> </div> 
-      </div>
+    
+    
     </section>
     
  <script id="modulos-template" type="text/x-handlebars-template">
@@ -49,20 +38,40 @@
     <a href="#Catalogos/{{clave}}">{{nombre}}</a>
   </script>
 
+
+ <script id="catalogoDetalle-template" type="text/x-handlebars-template">
+        <div class="columna"><input class="editable" placeholder="Descripcion1" autofocus value="{{descripcion1}}"/></div>
+        <div class="columna"><input class="editable" placeholder="Descripcion2" value="{{descripcion2}}"/></div>
+        <div class="columna"><input class="editable" placeholder="Monto1" value="{{monto1}}"/></div>
+        <div class="columna"><input class="editable" placeholder="Monto2" value="{{monto2}}"/></div> 
+  </script>
+
+
+    
+
   <link rel="stylesheet" href="css/estilos.css">
   <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
   <script type="text/javascript" src="lib/underscore.js"></script>
   <script type="text/javascript" src="lib/handlebars-v1.3.0.js"></script>
   <script type="text/javascript" src="lib/backbone.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
+  
   <script type="text/javascript" src="js/models/modulo.js"></script>
   <script type="text/javascript" src="js/models/catalogo.js"></script>
+  <script type="text/javascript" src="js/models/catalogoDetalle.js"></script>
+  
   <script type="text/javascript" src="js/collections/modulos.js"></script>
   <script type="text/javascript" src="js/collections/catalogos.js"></script>
+  <script type="text/javascript" src="js/collections/catalogoDetalles.js"></script>
+
   <script type="text/javascript" src="js/views/modulo.js"></script>
   <script type="text/javascript" src="js/views/modulos.js"></script>
+
   <script type="text/javascript" src="js/views/catalogo.js"></script>
   <script type="text/javascript" src="js/views/catalogos.js"></script>
+
+  <script type="text/javascript" src="js/views/catalogoDetalle.js"></script>
+  <script type="text/javascript" src="js/views/catalogoDetalles.js"></script>
   
   <script type="text/javascript" src="js/routers/router.js"></script>
   <script type="text/javascript" src="js/main.js"></script> 

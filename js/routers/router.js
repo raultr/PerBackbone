@@ -4,17 +4,20 @@ Personal.Router = Backbone.Router.extend({
     "Catalogos": "Catalogos",
     "Personal": "personal",
     "Herramientas": "herramientas",
-    "Catalogos/:nombre": "CatalogoDetalle"
+    "Catalogos/:clave": "CatalogoDetalle"
   },
 
 initialize: function () {
-    location.hash = '' //Para que al refrescar la pagina ponga #
+    location.hash = '';//Para que al refrescar la pagina ponga #
     this.current = {};
     this.jsonData = {};
     this.Modulos = new Personal.Collections.Modulos();
     this.ModulosVista = new Personal.Views.Modulos({ collection: this.Modulos });
+    
     this.Catalogos = new Personal.Collections.Catalogos();
     this.CatalogosVista = new Personal.Views.Catalogos({collection: this.Catalogos});
+    this.CatalogoDetalles = new Personal.Collections.CatalogoDetalles();
+    this.CatalogoDetalleVista = new Personal.Views.CatalogoDetalles({collection: this.CatalogoDetalles});
     Backbone.history.start();
   },
 
@@ -31,6 +34,14 @@ initialize: function () {
   },
 
 
+    CatalogoDetalle: function (clave) {
+      this.CatalogoDetalles.reset();
+
+      this.fetchData('/catalogos_detalle.json',this.addCatalogoDetalle);
+     
+     // this.CatalogoDetalle =this.CatalogoDetalles.where( {clave: clave});
+      console.info("Estas en el detalle del catalogo " + clave );
+    },
 
   personal: function () {
     console.log("Estas en la lista de personal");
@@ -41,16 +52,13 @@ initialize: function () {
   },
 
 
-  CatalogoDetalle: function () {
-    console.log("Estas en el detalle del catalogo");
-  },
 
-  addModulo: function (cat) {
+  addModulo: function (mod) {
         this.Modulos.add(new Personal.Models.modulo({
-        clave:cat.clave,
-        nombre:cat.nombre,
-        imagen:cat.imagen,
-        orden:cat.orden
+        clave:mod.clave,
+        nombre:mod.nombre,
+        imagen:mod.imagen,
+        orden:mod.orden
       }));
       console.log(this.Modulos.length);
      },
@@ -63,9 +71,24 @@ initialize: function () {
       }),{merge:true});
       console.log(this.Catalogos.length);
      },
+  addCatalogoDetalle: function (cdet,valor) {
+        console.log("agregando catalogo " + cdet.clave);
+        this.CatalogoDetalles.add( 
+          new Personal.Models.catalogoDetalle({
+          clave:cdet.clave,
+          clave_padre:cdet.clave_padre,
+          nombre_padre:cdet.nombre_padre,
+          consecutivo:cdet.consecutivo,
+          descripcion1:cdet.descripcion1,
+          descripcion2:cdet.descripcion2,
+          monto1:cdet.monto1,
+          monto2:cdet.monto2
+        }),{merge:true});
+        console.log(this.CatalogoDetalle.length);
+       },
 
 //***** FUNCIONES GENERICAS ****************
-  fetchData:function(ruta_json,funcion_llenado){
+  fetchData:function(ruta_json,funcion_llenado,clave){
       var self = this;
       $.ajax({
       dataType: 'json',
@@ -75,8 +98,8 @@ initialize: function () {
          for(var index in datos){
                //calls nos permite llamar a una funcion pasandole el this que la ejecutara
                funcion_llenado.call(self,datos[index]);
-        }     
-      },
+         }
+        },
        error: function() { alert("Error leyendo fichero jsonP"); }
     });
     }
