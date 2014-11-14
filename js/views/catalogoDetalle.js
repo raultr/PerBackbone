@@ -7,6 +7,8 @@ Personal.Views.catalogoDetalle = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, "change", this.render, this);
+    this.listenTo(this.model, "remove", this.destruir, this);
+    //this.listenTo(this.model, "reset", this.eliminar, this);
   },
 
   render: function () {
@@ -14,6 +16,11 @@ Personal.Views.catalogoDetalle = Backbone.View.extend({
     var html = this.template(catalogoDetalle);
     this.$el.html(html);
     return this;
-  }
-
+  },
+   destruir:function(){
+       this.$el.empty();
+   },
+  // eliminar:function(){
+  //   debugger;
+  // }
 });

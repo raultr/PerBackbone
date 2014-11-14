@@ -22,6 +22,13 @@ Personal.Views.Catalogos = Backbone.View.extend({
   },
   limpiarTodo:function(){
   	 this.$el.empty();
+  },
+  Mostrar: function () {
+       
+      this.$el.show();
+  },
+  Ocultar: function(){
+      this.$el.slideUp();
   }
 
 

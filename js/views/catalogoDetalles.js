@@ -18,7 +18,18 @@ Personal.Views.CatalogoDetalles = Backbone.View.extend({
     var catalogoDetalleView = new Personal.Views.catalogoDetalle({ model: det }); 
     this.$el.append(catalogoDetalleView.render().el);
   },
+  limpiar: function(){
+     console.log("limpiando");
+  },
+
   limpiarTodo:function(){
     this.$el.empty();
+  },
+  Mostrar: function () {
+       
+      this.$el.show();
+  },
+  Ocultar: function(){
+      this.$el.slideUp();
   }
 });

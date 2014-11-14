@@ -22,6 +22,7 @@ initialize: function () {
   },
 
   index: function () {
+    this.CatalogoDetalleVista.Ocultar();
     this.Modulos.reset();
     this.fetchData('/modulos.json',this.addModulo);
     console.log("Estas en el indice");
@@ -29,25 +30,30 @@ initialize: function () {
 
 
   Catalogos: function () {
+    this.CatalogosVista.Mostrar();
     this.fetchData('/catalogos.json',this.addCatalogo);
     console.log("Estas en la lista de Catalogos");
   },
 
 
-    CatalogoDetalle: function (clave) {
-      this.CatalogoDetalles.reset();
-
-      this.fetchData('/catalogos_detalle.json',this.addCatalogoDetalle);
+   CatalogoDetalle: function (clave) {
+      this.CatalogoDetalleVista.Mostrar();
+      this.CatalogoDetalles.remove( this.CatalogoDetalles.models );
+      this.fetchData('/catalogos_detalle.json',this.addCatalogoDetalle,clave);
      
      // this.CatalogoDetalle =this.CatalogoDetalles.where( {clave: clave});
       console.info("Estas en el detalle del catalogo " + clave );
     },
 
   personal: function () {
+    this.CatalogoDetalleVista.Ocultar();
+    this.CatalogosVista.Ocultar();
     console.log("Estas en la lista de personal");
   },
 
   herramientas: function () {
+    this.CatalogoDetalleVista.Ocultar();
+    this.CatalogosVista.Ocultar();
     console.log("Estas en la lista de herramientas");
   },
 
@@ -71,8 +77,10 @@ initialize: function () {
       }),{merge:true});
       console.log(this.Catalogos.length);
      },
-  addCatalogoDetalle: function (cdet,valor) {
+  addCatalogoDetalle: function (cdet,clave) {
         console.log("agregando catalogo " + cdet.clave);
+        console.log("*****!!" + clave);
+        if(clave===cdet.clave_padre){
         this.CatalogoDetalles.add( 
           new Personal.Models.catalogoDetalle({
           clave:cdet.clave,
@@ -85,11 +93,14 @@ initialize: function () {
           monto2:cdet.monto2
         }),{merge:true});
         console.log(this.CatalogoDetalle.length);
-       },
+      }
+    },
 
 //***** FUNCIONES GENERICAS ****************
   fetchData:function(ruta_json,funcion_llenado,clave){
       var self = this;
+      var val = clave;
+
       $.ajax({
       dataType: 'json',
       data: "",
@@ -97,7 +108,7 @@ initialize: function () {
       success: function(datos){
          for(var index in datos){
                //calls nos permite llamar a una funcion pasandole el this que la ejecutara
-               funcion_llenado.call(self,datos[index]);
+               funcion_llenado.call(self,datos[index],val);
          }
         },
        error: function() { alert("Error leyendo fichero jsonP"); }
