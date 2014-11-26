@@ -1,0 +1,46 @@
+body .catalogosDetalle {
+  display: table;
+  width: 90%;
+  border-collapse: collapse;
+}
+body .catalogosDetalle .cabecera {
+  font-weight: bold;
+  display: table-row;
+  background: #ec7063;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+  font-family: georgia;
+  color: #fff;
+}
+body .catalogosDetalle .cabecera .columna {
+  display: table-cell;
+  border: 1px solid #ccc;
+}
+body .catalogosDetalle .filas {
+  display: table-row;
+  text-align: left;
+}
+body .catalogosDetalle .filas .columna {
+  display: table-cell;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: #fff;
+}
+body .catalogosDetalle .filas .columna input {
+  width: 98%;
+  margin-left: 1px;
+  border-radius: 5px;
+  box-shadow: none;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.467;
+}
+body .catalogosDetalle .filas .columna .noeditable {
+  border: 2px solid #bdc3c7;
+  color: #95a5a6;
+}
+body .catalogosDetalle .filas .columna .editable {
+  border: 1px solid #7f8c8d;
+  color: #34495e;
+}

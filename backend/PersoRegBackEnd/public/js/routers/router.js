@@ -40,10 +40,8 @@ initialize: function () {
 
    CatalogoDetalle: function (clave) {
       this.CatalogoDetalleVista.Mostrar();
-      this.CatalogoDetalles.id = clave;
       this.CatalogoDetalles.remove( this.CatalogoDetalles.models );
-      this.CatalogoDetalles.fetch();
-      //this.fetchData('/catalogos_detalle.json',this.addCatalogoDetalle,clave);
+      this.fetchData('/catalogos_detalle.json',this.addCatalogoDetalle,clave);
      
      // this.CatalogoDetalle =this.CatalogoDetalles.where( {clave: clave});
       console.info("Estas en el detalle del catalogo " + clave );

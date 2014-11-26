@@ -8,7 +8,6 @@ class Catalogo(models.Model):
 	nombre = models.CharField(max_length=100)
 	icono = models.ImageField(blank=True,upload_to='catalogos')
 	url_icono = models.CharField(max_length=255, blank=True,default="")
-
 	#Overriding
 	def save(self, *args, **kwargs):
 		

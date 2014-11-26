@@ -1,0 +1,20 @@
+{
+    "CATALOGO": {
+      "clave": "1",
+      "nombre": "Catalogos",
+      "imagen":"/img/songs/girl.jpg",
+      "orden": "3"
+    },
+      "PERSONAL": {
+      "clave": "2",
+      "nombre": "Personal",
+      "imagen":"/img/songs/girl.jpg",
+      "orden": "1"
+    },
+      "HERRAMIENTAS": {
+      "clave": "3",
+      "nombre": "Herramientas",
+      "imagen":"/img/songs/girl.jpg",
+      "orden":"2"
+    }
+}

@@ -4,7 +4,7 @@ from django.db.models import Max
 from catalogos.models import Catalogo
 
 class CatalogoDetalle(models.Model):
-	catalogos = models.ForeignKey(Catalogo)
+	catalogos = models.ForeignKey(Catalogo, related_name='catalogos_detalle')
 	num_dcatalogo= models.IntegerField(default=0,help_text="clave consecutiva del detalle del catalogo")
 	udc_catalogo = models.CharField(max_length=7,default="0000000",unique=True,editable=False)
 	descripcion1  = models.CharField(max_length=255)
@@ -30,4 +30,4 @@ class CatalogoDetalle(models.Model):
 
 
 	def __unicode__(self):
-		return str(self.id)
+		return '%s: %s' % (self.udc_catalogo, self.descripcion1)

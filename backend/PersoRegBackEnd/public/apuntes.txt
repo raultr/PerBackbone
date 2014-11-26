@@ -1,0 +1,36 @@
+Iniciar el servidor:
+	python -m SimpleHTTPServer 7070
+
+Tutorial de backbone
+https://fcfe59e9efe9b0ff550b02e9b0ae8553e3453d58.googledrive.com/host/0Bzky3aU2486jMmN1Tmx6Z3U4VkU/
+
+Rutas:
+                '' index
+                'Catalogos' 'Lista de catalogos'
+                'Catalogos/Estados/ 'Lista de estados'
+                'Catalogos/Estados/1 'Detalle del estado con la clave 1'
+               
+ 
+MENU
+ 
+1 catalogos
+2 personal
+3 clientes
+ 
+ 
+  Catalogos:
+                Estados   -- Listado
+                Escolaridad -- Listado
+                EdoCiv -- Listado
+ 
+Modelo y Coleccion Modulos
+Modelo y Coleccion Catalogos
+ 
+ 
+Modelo y Coleccion CatalogoDet
+
+
+Catalogos:
+	Clave
+	Nombre
+	imagen

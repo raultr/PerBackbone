@@ -1,0 +1,22 @@
+[
+    {
+      "clave": "1",
+      "nombre": "Escolaridad",
+      "imagen":"/img/songs/girl.jpg"
+    },
+    {
+      "clave": "2",
+      "nombre": "Estado Civil",
+      "imagen":"/img/songs/girl.jpg"
+    },
+    {
+      "clave": "3",
+      "nombre": "Documento",
+      "imagen":"/img/songs/girl.jpg"
+    },
+    {
+      "clave": "4",
+      "nombre": "Documentacion",
+      "imagen":"/img/songs/girl.jpg"
+    }
+]
