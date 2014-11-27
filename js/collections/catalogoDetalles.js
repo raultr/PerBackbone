@@ -13,17 +13,3 @@ Personal.Collections.CatalogoDetalles = Backbone.Collection.extend({
     this.reset(results);
   }
 });
-
-
-var Messages = Backbone.Collection.extend({
-  initialize: function(models, options) {
-    this.id = options.id;
-  },
-  url: function() {
-    return '/messages/' + this.id;
-  },
-  model: Message,
-});
-
-var collection = new Messages([], { id: 2 });
-collection.fetch();
